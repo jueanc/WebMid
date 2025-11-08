@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juan's Webpage · Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ===== Navbar ===== -->
+  <header>
+    <h1 class="logo">&lt;J/&gt;</h1>
+    <nav aria-label="Primary">
+      <ul class="theme">
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="Highlights.html">Highlights</a></li>
+        <li><a href="Resource.html">Resource</a></li>
+        <li><a href="Table.html">Table</a></li>
+        <li><a class="active" aria-current="page" href="Gallery.html">Gallery</a></li>
+        <li><a href="Description.html">Description</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="profile">
+    <!-- ===== Sidebar / Profile ===== -->
+    <aside class="left">
+      <img
+        id="meme"
+        src="../Photo/MemeManProfile.png"
+        alt="Portrait of Juan"
+        width="200"
+        height="200"
+        usemap="#profilemap"
+        loading="lazy"
+      />
+
+      <map name="profilemap">
+        <area
+          id="faceArea"
+          shape="poly"
+          coords="10,187,24,181,49,169,59,150,62,134,56,118,48,116,43,108,41,94,40,78,34,58,45,33,58,16,74,6,88,4,103,9,117,8,128,11,140,21,156,45,159,68,153,84,151,97,149,113,143,118,140,136,132,146,132,154,137,168,169,182,196,199,0,198,0,192,-1,190"
+          href="Index.html"
+          alt="Back to Home"
+          title="Back to Home"
+        />
+      </map>
+
+      <div class="name">Juan</div>
+
+      <p class="meta">
+        <b>Mail</b>:
+        <a href="mailto:jueanc@gmail.com">jueanc</a>
+      </p>
+      <p class="meta" id="MLB">
+        <b>Web</b>:
+        <a href="https://mlb.com" target="_blank" rel="noopener noreferrer">mlb.com</a>
+      </p>
+    </aside>
+
+    <!-- ===== Main Content ===== -->
+    <main class="right">
+        <h1 >Day and Night</h1>
+        <button id="toggle" type="button" aria-pressed="false">切換白天</button>
+      <figure>
+        <canvas id="myCanvas4" width="800" height="500"
+                role="img"
+                aria-label="A city scene that toggles between day and night.">
+          Your browser does not support the HTML canvas tag.
+        </canvas>
+      </figure>
+      <hr>
+      <!-- Polaroid Switcher -->
+      <h1>Polaroid-Style Image Switcher</h1>
+      <p class="slow-msg">The web's kinda slow 😅 pls wait a sec! <br>圖片載入要一段時間請稍等!</p>
+
+      <section class="polaroid-wrap" aria-label="Polaroid image switcher" tabindex="0">
+        
+        <div class="polaroid">
+          <!-- 注意：移除 height="auto"，改交給 CSS 控制比例 -->
+          <img id="polaImg" src="../Photo/PaulBear.png" alt="Bear Coming" width="300" loading="lazy" />
+          <div class="caption" id="polaCap" aria-live="polite">Bear Coming</div>
+          <div class="caption" id="polaCounter" style="color: rgba(90, 92, 92, 0.644); font-size: 12px;">
+            Record 1 / 6
+          </div>
+        </div>
+
+        <div class="pola-controls" aria-controls="polaImg polaCap polaCounter">
+          <button class="pbtn" id="prevBtn" type="button" aria-label="Previous">◀ Prev</button>
+          <button class="pbtn" id="nextBtn" type="button" aria-label="Next">Next ▶</button>
+        </div>
+
+        <div class="thumbs" role="tablist" aria-label="Thumbnails">
+          <button class="chip" role="tab" data-idx="0" title="Photo 1" aria-selected="true"></button>
+          <button class="chip" role="tab" data-idx="1" title="Photo 2"></button>
+          <button class="chip" role="tab" data-idx="2" title="Photo 3"></button>
+          <button class="chip" role="tab" data-idx="3" title="Photo 4"></button>
+          <button class="chip" role="tab" data-idx="4" title="Photo 5"></button>
+          <button class="chip" role="tab" data-idx="5" title="Photo 6"></button>
+        </div>
+      </section>
+      <hr>
+      <h1>Soto being mad</h1>
+      <!-- Hover Overlay -->
+        <p class="slow-msg">Don't touch me</p>       
+      <section class="Sotohover">
+
+        <figure class="overlay-img">
+          <img src="../Photo/Soto.png" alt="Night view" class="main" loading="lazy">
+          <img src="../Photo/SotoMad.png" alt="Day view" class="overlay" loading="lazy">
+          <figcaption>I said DON'T TOUCH ME</figcaption>
+        </figure>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/GoHome.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+</body>
+</html>
